@@ -1,3 +1,6 @@
+* Internal Modifications for AstroForge
+  * Workaround for a build hang due to `cc` dependency
+
 * 0.92.2
   * Fix new warnings with Rust 1.80
   * Don't export `ocvrs_create_string` and `ocvrs_create_byte_string` from the rlib to allow combining multiple `opencv` create versions as dependencies.
