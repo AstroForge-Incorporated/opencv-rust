@@ -121,10 +121,14 @@ impl<'r> BindingGenerator<'r> {
 									.arg(additional_include_dirs);
 								eprintln!("=== Running: {bin_generator:?}");
 								let res = bin_generator
-									.status()
+									.output()
 									.unwrap_or_else(|e| panic!("Can't run bindings generator for module: {module}, error: {e}"));
-								if !res.success() {
-									panic!("Failed to run the bindings generator for module: {module}");
+								if !res.status.success() {
+									panic!(
+										"Failed to run the bindings generator for module: {module} Output: {} Err: {}",
+										String::from_utf8(res.stdout).unwrap(),
+										String::from_utf8(res.stderr).unwrap()
+									);
 								}
 								eprintln!("=== Generated: {module} in {:?}", module_start.elapsed());
 								drop(token); // needed to move the token to the thread

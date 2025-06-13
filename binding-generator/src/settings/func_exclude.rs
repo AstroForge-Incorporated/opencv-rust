@@ -88,12 +88,12 @@ fn gapi_factory() -> FuncExclude {
 fn hdf_factory() -> FuncExclude {
 	HashSet::from([
 		"cv_hdf_HDF5_dscreate_const_const_int_const_int_const_int_const_StringR_const_int_const_intX", // has corresponding Vector version
-		"cv_hdf_HDF5_dsinsert_const_const__InputArrayR_const_StringR_const_intX", // has corresponding Vector version
-		"cv_hdf_HDF5_dsinsert_const_const__InputArrayR_const_StringR_const_intX_const_intX", // has corresponding Vector version
-		"cv_hdf_HDF5_dsread_const_const__OutputArrayR_const_StringR_const_intX",  // has corresponding Vector version
-		"cv_hdf_HDF5_dsread_const_const__OutputArrayR_const_StringR_const_intX_const_intX", // has corresponding Vector version
-		"cv_hdf_HDF5_dswrite_const_const__InputArrayR_const_StringR_const_intX",  // has corresponding Vector version
-		"cv_hdf_HDF5_dswrite_const_const__InputArrayR_const_StringR_const_intX_const_intX", // has corresponding Vector version
+		"cv_hdf_HDF5_dsinsert_const_const__InputArrayR_const_StringR_const_intX",                      // has corresponding Vector version
+		"cv_hdf_HDF5_dsinsert_const_const__InputArrayR_const_StringR_const_intX_const_intX",           // has corresponding Vector version
+		"cv_hdf_HDF5_dsread_const_const__OutputArrayR_const_StringR_const_intX",                       // has corresponding Vector version
+		"cv_hdf_HDF5_dsread_const_const__OutputArrayR_const_StringR_const_intX_const_intX",            // has corresponding Vector version
+		"cv_hdf_HDF5_dswrite_const_const__InputArrayR_const_StringR_const_intX",                       // has corresponding Vector version
+		"cv_hdf_HDF5_dswrite_const_const__InputArrayR_const_StringR_const_intX_const_intX",            // has corresponding Vector version
 	])
 }
 
@@ -101,7 +101,7 @@ fn imgproc_factory() -> FuncExclude {
 	HashSet::from([
 		"cv_calcBackProject_const_MatX_int_const_intX_const_SparseMatR_const__OutputArrayR_const_floatXX_double_bool", // slice pointers
 		"cv_calcBackProject_const_MatX_int_const_intX_const__InputArrayR_const__OutputArrayR_const_floatXX_double_bool", // slice pointers
-		"cv_calcHist_const_MatX_int_const_intX_const__InputArrayR_SparseMatR_int_const_intX_const_floatXX_bool_bool", // slice pointers
+		"cv_calcHist_const_MatX_int_const_intX_const__InputArrayR_SparseMatR_int_const_intX_const_floatXX_bool_bool",  // slice pointers
 		"cv_calcHist_const_MatX_int_const_intX_const__InputArrayR_const__OutputArrayR_int_const_intX_const_floatXX_bool_bool", // slice pointers
 		"cv_fillConvexPoly_MatR_const_PointX_int_const_ScalarR_int_int",                                                       // 3.4
 		"cv_fillConvexPoly_const__InputOutputArrayR_const_PointX_int_const_ScalarR_int_int",

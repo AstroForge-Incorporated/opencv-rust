@@ -300,6 +300,8 @@ fn setup_rerun() -> Result<()> {
 
 fn build_wrapper(mut cc: cc::Build, modules: &[String], module_aliases: &HashMap<&str, &str>) {
 	eprintln!("=== Compiler information: {:#?}", cc.get_compiler());
+	cc.debug(true);
+	cc.cargo_debug(true);
 	for module in modules.iter().filter(|m| !module_aliases.contains_key(m.as_str())) {
 		cc.file(OUT_DIR.join(format!("{module}.cpp")));
 		let manual_cpp = SRC_CPP_DIR.join(format!("manual-{module}.cpp"));
@@ -407,6 +409,7 @@ fn main() -> Result<()> {
 	setup_rerun()?;
 
 	let ffi_export_suffix = format!("_{}", pkg_version.replace(".", "_"));
+	eprintln!("Working dir {:?}", env::current_dir()?);
 	let build_script_path = env::current_exe()?;
 	let binding_generator = BindingGenerator::new(&build_script_path, &modules, &module_aliases);
 	binding_generator.generate_wrapper(opencv_header_dir, &opencv, &ffi_export_suffix)?;

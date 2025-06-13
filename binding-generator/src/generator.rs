@@ -469,13 +469,16 @@ impl Generator {
 		if !module_file.exists() {
 			module_file = self.opencv_module_header_dir.join(format!("{module}.hpp"));
 		}
+		if !module_file.exists() {
+			panic!("{module_file:?} does not exist! Cannot parse!");
+		}
 		let root_tu = index
-			.parser(module_file)
+			.parser(module_file.clone())
 			.arguments(&self.build_clang_command_line_args())
 			.detailed_preprocessing_record(true)
 			.skip_function_bodies(true)
 			.parse()
-			.unwrap_or_else(|_| panic!("Cannot parse module: {module}"));
+			.unwrap_or_else(|e| panic!("Cannot parse module: {module} at {module_file:?}, {e:?}"));
 		Self::handle_diags(&root_tu.get_diagnostics(), panic_on_error);
 		entity_processor(root_tu.get_entity());
 	}

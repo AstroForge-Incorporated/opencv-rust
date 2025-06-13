@@ -37,7 +37,7 @@ windows = { version = "0.59", features = ["Win32_Graphics_Direct3D9", "Win32_Gra
 
 [build-dependencies]
 opencv-binding-generator = { version = "0.96.1", path = "binding-generator" }
-cc = { version = "1.0.83", features = ["parallel"] }
+cc = { version = "1.0.106", features = ["parallel"] }
 dunce = "1"
 # jobserver-0.1.25 is the first one that has Client::available() method
 jobserver = "0.1.25"
@@ -52,7 +52,7 @@ vcpkg = "0.2.9"
 matches = "0.1"
 # copy of build-dependencies because we need to test methods of the build script
 opencv-binding-generator = { version = "0.96.1", path = "binding-generator" }
-cc = { version = "1.0.83", features = ["parallel"] }
+cc = { version = "1.0.106", features = ["parallel"] }
 dunce = "1"
 # jobserver-0.1.25 is the first one that has Client::available() method
 jobserver = "0.1.25"
